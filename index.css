@@ -218,6 +218,7 @@ button {
 }
 
 .right > h1 {
+  color: var(--clr-primary-900);
   font-size: var(--fs-900);
   font-weight: var(--fw-medium);
 }
