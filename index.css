@@ -128,7 +128,6 @@ body {
   --grid-gap: 2rem;
   padding-block: 1rem;
   min-height: 100vh;
-  border: 1px solid red;
 }
 
 @media (min-width: 50em) {
@@ -136,10 +135,6 @@ body {
     --grid-gap: 0rem;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-  }
-
-  .grid--main > * {
-    border: 1px solid blue;
   }
 }
 
@@ -173,14 +168,18 @@ body {
 }
 
 @media (min-width: 50em) {
+  .purple {
+    width: 50%;
+  }
+
   .left-purple {
     bottom: 20vh;
-    left: -9em;
+    left: -30%;
   }
 
   .right-purple {
     top: 20vh;
-    right: -9em;
+    right: -25%;
   }
 }
 
