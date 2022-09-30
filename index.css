@@ -343,11 +343,13 @@ button {
 .chat-right > .chat {
   background-color: var(--clr-neutral-100);
   border-bottom-right-radius: 0.25rem;
+  box-shadow: 1px 5px 5px -5px rgb(115, 115, 115);
 }
 
 .chat-right > .chat--image {
   padding: 0;
   background: transparent;
+  box-shadow: none;
 }
 
 .chat--radio {
@@ -404,10 +406,19 @@ button {
 }
 
 .message-box > input[type="text"] {
+  color: var(--clr-primary-800);
   padding: 1rem;
   width: 100%;
   border: 0;
   border-radius: 100vmax;
+}
+
+.message-box > input[type="text"]:focus {
+  outline: 2px solid var(--clr-primary-800);
+}
+
+.message-box > input[type="text"]::placeholder {
+  color: var(--clr-primary-100);
 }
 
 .message-box > button {
