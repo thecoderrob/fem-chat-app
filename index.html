@@ -32,84 +32,83 @@
     <title>Frontend Mentor | Chat App | thecoderrob</title>
   </head>
   <body>
-    <div class="grid--main | grid">
-      <div class="purple-wrapper">
+    <main class="grid--main grid">
+      <div class="purple left-purple"></div>
+      <div class="purple right-purple"></div>
+      <div class="left">
         <div class="phone">
-          <div class="camera-cover"></div>
-
-          <div class="chat-header | flex">
-            <div class="user | flex">
+          <div class="cam-cover"></div>
+          <div class="chat-header flex">
+            <div class="chat-mate flex">
               <i class="fa-solid fa-chevron-left"></i>
               <img src="/images/avatar.jpg" alt="" />
               <div class="details">
-                <p>Samuel Green</p>
-                <p>Available to Walk</p>
+                <span>Samuel Green</span>
+                <p>Available for walk</p>
               </div>
             </div>
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
+          <div class="chat-body grid">
+            <div class="chat-left flow">
+              <div class="chat">
+                <p>That sounds great. I'd be happy with that.</p>
+              </div>
 
-          <div class="chat-body | grid">
-            <div class="chat left">
-              <p>That sounds great. I’d be happy with that.</p>
-            </div>
-            <div class="chat left">
-              <p>Could you send over some pictures of your dog, please?</p>
-            </div>
-
-            <div class="chat right--images | flex">
-              <img src="/images/dog-image-1.jpg" alt="" />
-              <img src="/images/dog-image-2.jpg" alt="" />
-              <img src="/images/dog-image-3.jpg" alt="" />
-            </div>
-            <div class="chat right">
-              <p>Here are a few pictures. She’s a happy girl!</p>
-            </div>
-            <div class="chat right">
-              <p>Can you make it?</p>
+              <div class="chat">
+                <p>Could you send over some pictures of your dog, please?</p>
+              </div>
             </div>
 
-            <div class="chat left">
-              <p>
-                She looks so happy! The time we discussed works. How long shall
-                I take her out for?
-              </p>
-            </div>
-            <div class="chat radio | flex">
-              <label for="30min" class="radio-label">
-                <input
-                  type="radio"
-                  name="walk"
-                  id="30min"
-                  class="radio__input"
-                />
-                <div class="radio__radio"></div>
-                30 minute walk
-              </label>
-              <span class="price">$29</span>
-            </div>
-            <div class="chat radio | flex">
-              <label for="1hr" class="radio-label">
-                <input type="radio" name="walk" id="1hr" class="radio__input" />
-                <div class="radio__radio"></div>
-                1 hour walk
-              </label>
-              <span class="price">$49</span>
+            <div class="chat-right flow">
+              <div class="chat chat--image flex">
+                <img src="/images/dog-image-1.jpg" alt="" />
+                <img src="/images/dog-image-2.jpg" alt="" />
+                <img src="/images/dog-image-3.jpg" alt="" />
+              </div>
+              <div class="chat">
+                <p>Here are a few pictures. She's a happy girl!</p>
+              </div>
+              <div class="chat">
+                <p>Can you make it?</p>
+              </div>
             </div>
 
-            <div class="input-message">
-              <input type="text" placeholder="Type a message..." id="message" />
-              <label for="message"></label>
+            <div class="chat-left flow">
+              <div class="chat">
+                <p>
+                  She looks so happy! The time we discuessed works. How long
+                  shall I take her out for?
+                </p>
+              </div>
+              <div class="chat chat--radio">
+                <label for="half-hour">
+                  <input type="radio" name="walk" id="half-hour" />
+                  <div class="custom-radio"></div>
+                  30 minute walk
+                </label>
+                <span>$29</span>
+              </div>
+              <div class="chat chat--radio">
+                <label for="full-hour">
+                  <input type="radio" name="walk" id="full-hour" />
+                  <div class="custom-radio"></div>
+                  1 hour walk
+                </label>
+                <span>$49</span>
+              </div>
+            </div>
 
+            <div class="message-box">
+              <input type="text" placeholder="Type a message..." />
               <button type="button">
                 <i class="fa-solid fa-circle-chevron-right"></i>
               </button>
             </div>
           </div>
         </div>
-        <div class="purple"></div>
       </div>
-      <div class="content">
+      <div class="right">
         <h1>Simple booking</h1>
         <p>
           Stay in touch with our dog walkers through the chat interface. This
@@ -118,6 +117,6 @@
           the chat.
         </p>
       </div>
-    </div>
+    </main>
   </body>
 </html>
