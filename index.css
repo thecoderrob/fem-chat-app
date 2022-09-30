@@ -1,0 +1,363 @@
+:root {
+  --clr-primary-600: hsl(271, 36%, 24%); /*heading*/
+  --clr-primary-500: hsl(276, 55%, 52%); /*chat left text*/
+  --clr-primary-400: hsl(276, 100%, 81%); /*subheading under name*/
+  --clr-primary-300: hsl(271, 15%, 43%); /*chat right*/
+  --clr-primary-200: hsl(270, 7%, 64%); /*paragrah*/
+  --clr-primary-100: hsl(206, 6%, 79%); /*input placeholder*/
+
+  --clr-gradient-from: hsl(264, 100%, 61%);
+  --clr-gradient-to: hsl(293, 100%, 63%);
+
+  --clr-neutral-300: hsl(289, 100%, 72%); /*radio button outline */
+  --clr-neutral-250: hsl(272, 41%, 93%); /*chat left bg*/
+  --clr-neutral-200: hsl(270, 20%, 96%); /*bg*/
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-primary: "Rubik", sans-serif;
+
+  --fs-900: 2.5rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+  --fs-100: 0.5rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+/*====================
+===== CSS RESET ======
+====================*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*====================
+====== UTILITY =======
+====================*/
+.flex {
+  display: flex;
+  gap: var(--flex-gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap, 1rem);
+}
+
+/*====================
+====== GENERAL =======
+====================*/
+body {
+  font-size: var(--fs-400);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+}
+
+.grid--main {
+  min-height: 100vh;
+}
+
+@media (min-width: 50em) {
+  .grid--main {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.purple-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.purple {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 10vh;
+  left: 0;
+  z-index: -1;
+  border-bottom-right-radius: 100vmax;
+  background-image: linear-gradient(
+    45deg,
+    var(--clr-gradient-from),
+    var(--clr-gradient-to)
+  );
+}
+
+@media (min-width: 50em) {
+  .purple {
+    border-bottom-left-radius: 100vmax;
+  }
+}
+
+.content {
+  padding: 1rem;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+}
+
+@media (min-width: 50em) {
+  .content {
+    text-align: start;
+    justify-self: start;
+  }
+}
+
+.content > h1 {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-medium);
+}
+
+.content > p {
+  margin-top: 1rem;
+  max-width: 30ch;
+  line-height: 1.6;
+}
+
+/* Phone */
+.phone {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  background-color: var(--clr-neutral-100);
+  box-shadow: 0px 10px 30px -10px #c7c7c7;
+}
+
+@media (min-width: 50em) {
+  .phone {
+    margin-left: clamp(0rem, 8vw, 8rem);
+  }
+}
+
+.camera-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1000;
+  padding-block: 0.75rem;
+  width: 50%;
+  border-radius: 100vmax;
+  background: var(--clr-neutral-100);
+}
+
+.chat-header {
+  --flex-gap: 5rem;
+  padding-block: 2rem 1rem;
+  padding-inline: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--clr-neutral-100);
+  border-radius: 1rem 1rem 0.3rem 0.3rem;
+  background-image: linear-gradient(
+    90deg,
+    var(--clr-gradient-from),
+    var(--clr-gradient-to)
+  );
+}
+
+.user {
+  --flex-gap: 0.5rem;
+  align-items: center;
+}
+
+.chat-header .user > img {
+  max-width: 1.5rem;
+  border-radius: 50%;
+  outline: 1px solid var(--clr-neutral-100);
+}
+
+.chat-header .user .details > *:first-child {
+  font-size: var(--fs-200);
+}
+.chat-header .user .details > *:last-child {
+  font-size: var(--fs-100);
+}
+
+.chat-body {
+  --grid-gap: 0.5rem;
+  font-size: var(--fs-100);
+  padding: 0.5rem;
+  background-color: var(--clr-neutral-200);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.chat-body > .chat {
+  max-width: max-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.chat-body .chat > p {
+  max-width: 23ch;
+}
+
+.chat-body > .left {
+  color: var(--clr-primary-500);
+  background-color: var(--clr-neutral-250);
+  border-bottom-left-radius: 0.1rem;
+}
+
+.chat-body > .right {
+  justify-self: end;
+  color: var(--clr-primary-600);
+  background-color: var(--clr-neutral-100);
+  border-bottom-right-radius: 0.1rem;
+  box-shadow: 0px 3px 5px -3px var(--clr-primary-600);
+}
+
+.chat-body > .right--images {
+  --flex-gap: 0.5rem;
+  padding: 0;
+  justify-self: end;
+}
+
+.chat-body .right--images > img {
+  max-width: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.chat-body > .radio {
+  align-items: center;
+  color: var(--clr-neutral-200);
+  background-image: linear-gradient(
+    90deg,
+    var(--clr-gradient-to),
+    var(--clr-gradient-from)
+  );
+}
+
+/* Radio button */
+.chat-body .radio-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chat-body .radio__input {
+  display: none;
+}
+
+.chat-body .radio__radio {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid var(--clr-neutral-300);
+  border-radius: 50%;
+  margin-right: 8px;
+  padding: 2px;
+}
+
+.chat-body .radio__radio::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  background: var(--clr-neutral-200);
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.chat-body .radio__input:checked + .radio__radio::after {
+  transform: scale(1);
+}
+
+.chat-body .radio > span {
+  font-weight: var(--fw-bold);
+}
+
+.chat-body > .input-message {
+  position: relative;
+}
+
+.chat-body .input-message > input[type="text"] {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 100vmax;
+  width: 100%;
+}
+
+.chat-body .input-message > button {
+  cursor: pointer;
+  font-size: var(--fs-400);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  border: 0;
+  background: transparent;
+}
+
+.chat-body .input-message button > i {
+  color: var(--clr-primary-600);
+}
